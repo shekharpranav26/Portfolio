@@ -352,22 +352,18 @@
     });
   });
 
-  // Get all "i" info buttons
   const infoButtons = document.querySelectorAll('.info-icon');
 
-  // Add click event listener to each info button
   infoButtons.forEach(button => {
     button.addEventListener('click', (event) => {
-      event.preventDefault(); // Prevent default anchor action
+      event.preventDefault();
 
-      // Get project details from data attributes
       const title = button.getAttribute('data-title');
       const description = button.getAttribute('data-description');
       const skills = button.getAttribute('data-skills');
       const demoLink = button.getAttribute('data-demo') || "#";
       const repoLink = button.getAttribute('data-repo') || "#";
 
-      // Create a popup/modal dynamically
       const modalHTML = `
         <div id="project-modal" class="modal">
           <div class="modal-content">
@@ -381,25 +377,22 @@
         </div>
       `;
 
-      // Remove existing modal if any
       const existingModal = document.getElementById("project-modal");
       if (existingModal) {
         existingModal.remove();
       }
 
-      // Add new modal to the body
+
       document.body.insertAdjacentHTML('beforeend', modalHTML);
 
-      // Show the modal
       const modal = document.getElementById("project-modal");
       modal.style.display = "block";
 
-      // Close modal on clicking close button
+
       document.querySelector(".close-btn").addEventListener("click", () => {
         modal.remove();
       });
 
-      // Close modal if clicking outside of it
       window.addEventListener("click", (e) => {
         if (e.target === modal) {
           modal.remove();
@@ -549,7 +542,7 @@
   <div class="box-container">
      <div class="box">
         <div class="content">
-        <h3><a href="https://drive.google.com/file/d/1gV379kg_UCd5BAQNRbIgPD4h-Fzm0CCC/view?usp=drive_link" style="font-size: 15px;color:#9d9292; font-weight: bold;">Click Here To Download Resume</a></h3>
+        <h3><a href="https://drive.google.com/file/d/151LvRAW72mOTDd3cVzKjEDQ3b2Dxx0UI/view?usp=drive_link" style="font-size: 15px;color:#9d9292; font-weight: bold;">Click Here To Download Resume</a></h3>
 </section>
 <section class="footer">
 
